@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Login from './Login';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
+
+function isLoggedIn() {
+  if(localStorage.getItem("token")) return true;
+  else return false;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          { isLoggedIn() ? <Redirect to={{pathname: "/dashboard"}} /> : <Login />}
+        </Route>
+        <Route path="/register">
+          <form></form>
+        </Route>
+        <Route path="/dashboard">
+          <h1>Dashboard</h1>
+        </Route>
+        <Route path="*">
+          <h1 style={{color: "#FFFFFF"}}>Error 404: The route doesn't exist.</h1>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
