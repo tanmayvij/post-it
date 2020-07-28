@@ -3,6 +3,7 @@ import './Styles.css';
 import Login from './Login';
 import Register from './Register';
 import Dashboard from './Dashboard';
+import User from './User'
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/dashboard">
           <Dashboard />
+        </Route>
+        <Route path="/user">
+          <User />
         </Route>
         <Route path="*">
           <h1 style={{color: "#FFFFFF"}}>Error 404: The route doesn't exist.</h1>
