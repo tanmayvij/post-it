@@ -1,5 +1,8 @@
 import React from 'react';
+import './Styles.css';
 import Login from './Login';
+import Register from './Register';
+import Dashboard from './Dashboard';
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,10 +23,10 @@ function App() {
           { isLoggedIn() ? <Redirect to={{pathname: "/dashboard"}} /> : <Login />}
         </Route>
         <Route path="/register">
-          <form></form>
+          <Register />
         </Route>
         <Route path="/dashboard">
-          <h1>Dashboard</h1>
+          <Dashboard />
         </Route>
         <Route path="*">
           <h1 style={{color: "#FFFFFF"}}>Error 404: The route doesn't exist.</h1>
