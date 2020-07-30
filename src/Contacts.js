@@ -14,7 +14,7 @@ class Contacts extends Component {
                 <h1>Contacts</h1>
                 <table className="table">
                 {
-                    this.state.contacts.map(c => (
+                    this.state.contacts.filter((contact) => contact.id !== localStorage.getItem("userid")).map(c => (
                         <tr key={c.id}>
                             <td><img className="rounded-circle" src={"https://picsum.photos/200"} height="42" width="42" alt={c.name} /></td>
                             <td><label className="label text-primary">{c.name}</label></td>

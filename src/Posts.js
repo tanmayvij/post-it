@@ -25,7 +25,7 @@ class Post extends Component {
             <div style={{overflow: "scroll", height: 500}} className="mt-4">
                 {
                     this.props.posts.map(post => (
-                        <div className="card mb-4 p-3">
+                        <div className="card mb-4 p-3" key={post.source.name}>
                         <div className="card-header">
                             <h4 className="card-title">{post.author}</h4>
                             {
