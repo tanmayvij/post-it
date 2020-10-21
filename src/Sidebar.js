@@ -8,7 +8,7 @@ const Sidebar = (props) => {
                 <div className="card-transparent">
                     <ul className="nav flex-column nav-pills">
                         <li>
-                            <Link className={"nav-link" + (props.page == "dashboard" ? " active" : "")} style={{color: "white"} } to="/dashboard">Home</Link>
+                            <Link className={"nav-link" + (props.page === "dashboard" ? " active" : "")} style={{color: "white"} } to="/dashboard">Home</Link>
                         </li>
                         <li>
                             <Link className={"nav-link" + (props.page !== "dashboard" ? " active" : "")} style={{color: "white"} } to={"/user?id="+localStorage.getItem("userid")}>My Profile</Link>

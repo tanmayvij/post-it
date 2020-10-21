@@ -13,8 +13,8 @@ app.use(function(req, res, next) {
 	next();
 });
 
-app.use(express.urlencoded());
-app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ extended: false }));
 
 app.use('/api', system);
 app.use('/', express.static('public'));
